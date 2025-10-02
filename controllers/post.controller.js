@@ -81,18 +81,15 @@ export const deletePost = async (req, res, next) => {
 
 export const getFeed = async (req, res, next) => {
   try {
-    // pagination defaults
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 20;
     const skip = (page - 1) * limit;
 
-    // get posts newest first
     const posts = await Post.find()
       .sort({ createdAt: -1 })
       .skip(skip)
       .limit(limit);
 
-    // total count for frontend
     const total = await Post.countDocuments();
 
     res.status(200).json({

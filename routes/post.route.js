@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 })
 
 router.get('/getProfilePosts/:id', getProfilePosts)
-router.post('/create', authenticateToken, uploadSingleImage, createPost)
+router.post('/create', uploadSingleImage, createPost)
 router.delete('/delete/:postId', deletePost)
 
 router.get('/feed', getFeed)
