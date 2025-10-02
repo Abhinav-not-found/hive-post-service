@@ -4,7 +4,7 @@ import { imagekit } from '../config/imagekit.js'
 export const createPost = async (req, res, next) => {
   try {
     const { description } = req.body || {}
-    const userId = req.user.id
+    const { id } = req.params
 
     if (!description) {
       return res.status(400).json({
@@ -27,7 +27,7 @@ export const createPost = async (req, res, next) => {
 
 
     const newPost = await Post.create({
-      description, userId, image: uploadedUrls
+      description, userId:id, image: uploadedUrls
     })
 
     res.status(201).json({ message: "Post Created!!!" })
