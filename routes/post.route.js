@@ -7,7 +7,7 @@ const router = express.Router()
 
 // make - update
 
-router.get('/test', async (req, res) => {
+router.get('/', async (req, res) => {
   res.send('Post service route is working')
 })
 
