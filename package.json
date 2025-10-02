@@ -5,7 +5,9 @@
   "main": "post.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon post.js"
+    "dev": "nodemon post.js",
+    "start": "node post.js",
+    "build": "npm install "
   },
   "keywords": [],
   "author": "",
